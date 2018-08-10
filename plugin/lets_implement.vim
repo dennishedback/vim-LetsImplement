@@ -29,9 +29,9 @@ if !has("python3")
     finish
 endif
 
-if exists("g:__lets_implement_plugin_loaded")
-    finish
-endif
+"if exists("g:__lets_implement_plugin_loaded")
+"    finish
+"endif
 
 " https://stackoverflow.com/questions/6639863/vim-split-unless-open
 function! LimplSmartOpen(file)
@@ -46,8 +46,10 @@ function! LimplSmartOpen(file)
     endif
 endfunction
 
+let s:script = expand("<sfile>:p:h") . "/LimplCall.py"
+
 function! LimplCall()
-    py3file LimplCall.py
+    exe "py3file " . s:script
 endfunction
 
 command! LetsImplement call LimplCall()
