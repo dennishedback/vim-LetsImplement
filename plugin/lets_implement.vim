@@ -47,7 +47,7 @@ function! LimplSmartOpen(file)
 endfunction
 
 function! LimplCall()
-    py3file plugin/LimplCall.py
+    py3file LimplCall.py
 endfunction
 
 command! LetsImplement call LimplCall()
