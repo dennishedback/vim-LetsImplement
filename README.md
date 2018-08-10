@@ -47,7 +47,11 @@ let g:lets_implement_open_command="belowright split"  " Command used to open the
 * Different brace styles
 * Arbitrary filenames
 * Preservation of modifier order
-* General robustness
+
+## Known issues
+
+* Backend writes to standard output/standard error which may or may not make your vim session fubar
+* Backend issues warnings on C++17 features
 
 ## Copying
 
