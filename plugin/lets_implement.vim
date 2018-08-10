@@ -46,7 +46,8 @@ function! LimplSmartOpen(file)
     endif
 endfunction
 
-let s:script = expand("<sfile>:p:h") . "/LimplCall.py"
+let s:dir = expand("<sfile>:p:h")
+let s:script = s:dir . "/LimplCall.py"
 
 function! LimplCall()
     exe "py3file " . s:script

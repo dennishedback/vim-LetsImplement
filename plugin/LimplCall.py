@@ -30,6 +30,11 @@
 import vim
 import os
 import tempfile
+import sys
+
+SCRIPT_DIR = vim.eval("s:dir")
+sys.path.insert(0, SCRIPT_DIR)
+
 from lets_implement import implement
 
 
