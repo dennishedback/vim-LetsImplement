@@ -42,6 +42,8 @@ let g:lets_implement_open_command="belowright split"  " Command used to open the
 
 ## Planned features
 
+* Only implement declaration under cursor
+* Only implement declarations in selection
 * Different brace styles
 * Arbitrary filenames
 * Preservation of modifier order
