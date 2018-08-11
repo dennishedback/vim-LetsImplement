@@ -29,7 +29,6 @@
 
 import vim
 import os
-import tempfile
 import sys
 
 USE_SYSTEM_MODULE = bool(int(vim.eval("g:__lets_implement_use_system_module")))
@@ -39,6 +38,10 @@ if not USE_SYSTEM_MODULE:
     sys.path.insert(0, SCRIPT_DIR)
     from bundle.lets_implement import implement
 else:
+    import importlib
+    import lets_implement
+    # Vim seems to keep a cache of imports, so force reload
+    importlib.reload(lets_implement)
     from lets_implement import implement
 
 
