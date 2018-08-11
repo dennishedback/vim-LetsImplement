@@ -32,7 +32,7 @@ import os
 import tempfile
 import sys
 
-USE_SYSTEM_MODULE = bool(vim.eval("g:__lets_implement_use_system_module"))
+USE_SYSTEM_MODULE = bool(int(vim.eval("g:__lets_implement_use_system_module")))
 SCRIPT_DIR = vim.eval("s:dir")
 
 if not USE_SYSTEM_MODULE:
