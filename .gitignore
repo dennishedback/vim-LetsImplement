@@ -1,2 +1,6 @@
-test.*
+# Test files
+*.hpp
+*.cpp
+
+# Python files
 __pycache__
