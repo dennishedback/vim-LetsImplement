@@ -37,8 +37,9 @@ SCRIPT_DIR = vim.eval("s:dir")
 
 if not USE_SYSTEM_MODULE:
     sys.path.insert(0, SCRIPT_DIR)
-
-from lets_implement import implement
+    from bundle.lets_implement import implement
+else:
+    from lets_implement import implement
 
 
 def main():
