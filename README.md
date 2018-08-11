@@ -19,25 +19,25 @@ Yes you can! vim-LetsImplement parses your header files and appends definition s
 ### Instructions
 
 1. Run `vim --version` and look for `+python3` to verify that your vim installation was compiled with support for python3.
-2. On many Linux systems, `castxml` should be obtainable through your package manager, either from official or unofficial repositories. On Mac OSX, homebrew should be able to accomplish the same thing. If not, `gccxml` *should* work instead.
+2. On many Linux systems, `castxml` should be obtainable through your package manager, either from official or unofficial repositories. If not, the more readily available package `gccxml` *could* work instead. On Mac OSX, homebrew is your friend.
 3. `pygccxml` is most easily obtainable through pip: `pip install pygccxml`
 4. Install vim-LetsImplement using Vundle or Pathogen. Alternatively, manually install by copying everything under `vim-LetsImplement/plugin/` to `~/.vim/plugin`
 
 ## Usage and configuration
 
-vim-LetsImplement comes with the command `:LetsImplement`. When run, it will:
-
-1. Parse the contents of the current buffer and extract all implementable declarations.
-2. Look for a corresponding C/C++-file on *the same path* as the file in the current buffer. If no such file is found, it will create this file instead, and add an `#include`-directive.
-3. Create definition stubs of all methods not yet implemented. **NOTE:** vim-LetsImplement will never overwrite the contents of the C/C++-file, only append to it.
-4. If the implementation file is already open in some buffer, then vim will focus on that window. If not, the file will be opened automatically by vim-LetsImplement.
-
-The following options are available for use in your `.vimrc` (default values shown below):
+vim-LetsImplement comes with the command `:LetsImplement`. By default, this
+command will: Parse the contents of the current buffer, extract all
+implementable declarations and append definitions to a corresponding
+C/C++-file. Its behaviour may be configured in your `.vimrc` (default
+values shown below):
 
 ```
-let g:lets_implement_auto_jump=1                      " Whether to auto focus on the implementation file
-let g:lets_implement_auto_open=1                      " Whether to auto open the implementation file
-let g:lets_implement_open_command="belowright split"  " Command used to open the implementation file
+" Whether to auto jump to the window containing the implementation file
+let g:lets_implement_auto_jump=1
+" Whether to auto open the implementation file
+let g:lets_implement_auto_open=1
+" Vim command used to open the implementation file
+let g:lets_implement_open_command="belowright split"
 ```
 
 ## Planned features
