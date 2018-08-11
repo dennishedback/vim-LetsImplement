@@ -56,6 +56,7 @@ endfunction
 command! LetsImplement call LimplCall()
 
 let g:__lets_implement_plugin_loaded=1
+let g:__lets_implement_use_system_module=0
 let g:lets_implement_auto_jump=1
 let g:lets_implement_auto_open=1
 let g:lets_implement_open_command="belowright split"

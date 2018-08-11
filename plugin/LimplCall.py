@@ -32,8 +32,11 @@ import os
 import tempfile
 import sys
 
+USE_SYSTEM_MODULE = bool(vim.eval("g:__lets_implement_use_system_module"))
 SCRIPT_DIR = vim.eval("s:dir")
-sys.path.insert(0, SCRIPT_DIR)
+
+if not USE_SYSTEM_MODULE:
+    sys.path.insert(0, SCRIPT_DIR)
 
 from lets_implement import implement
 
